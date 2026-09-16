@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/sx_logo.png">
+  <link rel="apple-touch-icon" href="assets/sx_logo.png">
   <title>盛欣・盛碁網絡｜營運協同與治理標準化計畫 Kick-off 互動入口</title>
   <style>
     :root {
@@ -88,18 +90,22 @@
       color: inherit;
     }
 
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #0284c7, #38bdf8);
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 18px;
-      color: #fff;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .brand-logo-img:hover {
+      transform: scale(1.06);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.6);
     }
 
     .brand-title {
@@ -909,7 +915,7 @@
   <header>
     <div class="container nav-inner">
       <a href="#" class="brand-badge">
-        <div class="brand-logo">SX</div>
+        <img src="assets/sx_logo.png" alt="盛欣網絡" class="brand-logo-img" onerror="this.src='assets/logo.png'">
         <div class="brand-title">
           <h1>盛欣・盛碁網絡 營運治理標準化</h1>
           <span>Operational Governance & Collaboration Program</span>
@@ -924,6 +930,10 @@
           <li><a href="#raci" class="nav-btn">RACI 權責</a></li>
           <li><a href="#drive" class="nav-btn">Shared Drive</a></li>
           <li><a href="#timeline" class="nav-btn">90 天時程</a></li>
+          <li><a href="http://10.0.0.24:8091" target="_blank" class="nav-btn" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); font-weight: 700; box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            文檔中心 (10.0.0.24:8091) ↗
+          </a></li>
         </ul>
       </nav>
     </div>
@@ -942,7 +952,7 @@
       </p>
       <div class="hero-meta">
         <span>架構規劃：<strong>Howard Liao Ph.D.</strong></span>
-        <span>文管中心負責人：<strong>財務 玉霜 ｜ 技術 翊庭 ｜ 人事・總務 芮郗</strong></span>
+        <span>文管中心負責人：<strong>財務 玉霜 ｜ 技術 翊庭、睿修 ｜ 人事・總務 芮郗</strong></span>
         <span>適用對象：<strong>公司各營運與職能團隊</strong></span>
         <span>版本狀態：<strong>v1.0 (實施核定)</strong></span>
       </div>
@@ -993,7 +1003,7 @@
           <div style="background: #090e1d; border: 1px solid rgba(226, 232, 240, 0.08); border-radius: 10px; padding: 14px 16px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
               <span style="font-size: 13px; font-weight: 700; color: #fff;">技術 文管主責</span>
-              <span style="font-size: 15px; font-weight: 800; color: var(--accent-cyan);">翊庭</span>
+              <span style="font-size: 15px; font-weight: 800; color: var(--accent-cyan);">翊庭 ｜ 睿修</span>
             </div>
             <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
               主責技術變更與發布政策 (POL-08)、需求評估與上線程序 (P-07/P-14)、架構圖與維運 Runbook 審查
@@ -1008,6 +1018,18 @@
               主責公司治理與人事政策 (POL-01/02/06)、組織職掌與到離職程序 (P-01/P-02/P-11)、文件編號與版控發布
             </div>
           </div>
+        </div>
+
+        <!-- Document Center Direct Access Bar -->
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            <span>文檔中心內部受控系統位址：</span>
+            <a href="http://10.0.0.24:8091" target="_blank" style="color: var(--accent-cyan); font-family: monospace; font-size: 13px; font-weight: 700; text-decoration: none; background: #090e1d; padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.35);">http://10.0.0.24:8091</a>
+          </div>
+          <a href="http://10.0.0.24:8091" target="_blank" class="copy-btn" style="text-decoration: none; padding: 7px 16px; background: linear-gradient(135deg, #0284c7, #38bdf8); color: #fff; font-weight: 700; border: none; box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); border-radius: 6px;">
+            進入文檔中心系統 ↗
+          </a>
         </div>
       </div>
     </div>
@@ -1672,7 +1694,7 @@
             <div class="timeline-week">第 1–2 週：專案啟動與高層共識</div>
             <div class="timeline-title">任命 Sponsor、專案經理與各部門流程 Owner；文管中心 (DCC) 正式就位</div>
             <div class="timeline-text">
-              發布 Kick-off 公告，宣示「反繁瑣、重協同、求實效」精神。文管中心核心負責團隊（財務 玉霜 / 技術 翊庭 / 人事・總務 芮郗）正式建立文件管理與受控發布標準。建立專案工作區、Shared Drive 根目錄與溝通 4 大底線。
+              發布 Kick-off 公告，宣示「反繁瑣、重協同、求實效」精神。文管中心核心負責團隊（財務 玉霜 / 技術 翊庭、睿修 / 人事・總務 芮郗）正式建立文件管理與受控發布標準。建立專案工作區、Shared Drive 根目錄與溝通 4 大底線。
             </div>
           </div>
         </div>
@@ -1718,7 +1740,7 @@
         <strong>盛欣網絡 (SX) ＆ 盛碁網絡科技</strong> 內部營運協同與公司治理標準化手冊
       </div>
       <p>
-        Design System: Deep Obsidian & Cyber Tech | 總體規劃與架構：<strong>Howard Liao Ph.D.</strong> ｜ 文管中心負責人：<strong>財務 玉霜 / 技術 翊庭 / 人事・總務 芮郗</strong><br>
+        Design System: Deep Obsidian & Cyber Tech | 總體規劃與架構：<strong>Howard Liao Ph.D.</strong> ｜ 文管中心負責人：<strong>財務 玉霜 / 技術 翊庭、睿修 / 人事・總務 芮郗</strong><br>
         本系統文件與數據受組織受控治理規範保護，僅供公司內部協同使用。
       </p>
     </div>
@@ -1761,7 +1783,7 @@
         title: "管理辦法與程序書 (Procedure / Framework)",
         subtitle: "核心解答：誰做、何時做 (Who & When)？跨部門流程與內控如何運作？",
         color: "var(--accent-amber)",
-        dccOwner: "各流程主責 Owner 起草 ｜ 財務（玉霜）、技術（翊庭）、總務（芮郗）共同覆核",
+        dccOwner: "各流程主責 Owner 起草 ｜ 財務（玉霜）、技術（翊庭、睿修）、總務（芮郗）共同覆核",
         scope: "核心業務跨部門協同、共 17 項核心程序 (P-01 ~ P-17)",
         essence: "二階把政策轉化為可跨部門落地的制度。最關鍵不是每個按鈕怎麼按，而是建立「流程控制點 (Control Points)」、輸入輸出、交接條件與退件權。",
         features: [
@@ -1783,7 +1805,7 @@
         title: "標準作業程序與作業指導書 (SOP / WI / Runbook)",
         subtitle: "核心解答：實際上怎麼做 (How)？第一線同仁如何重複產出一致成果？",
         color: "var(--accent-teal)",
-        dccOwner: "執行部門主管核准 ｜ 技術文管窗口（翊庭）與各部門經辦共同維護",
+        dccOwner: "執行部門主管核准 ｜ 技術文管窗口（翊庭、睿修）與各部門經辦共同維護",
         scope: "第一線操作同仁 (研發、MIS、客服、財務、美術、HR)",
         essence: "三階文件的受眾是現場執行人員。步驟必須足夠具體，包含畫面截圖、配置設定、指令語法、判定條件、失敗處置與 Rollback 回滾步驟。",
         features: [
