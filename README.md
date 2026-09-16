@@ -4,6 +4,10 @@
 
 > **線上互動式 Kick-off 戰情首頁**：[https://howardliao.github.io/ISO_DM/](https://howardliao.github.io/ISO_DM/)  
 > **架構規劃**：Howard Liao Ph.D.  
+> **文管中心 (DCC) 負責人**：  
+> - 財務 文管主責：**玉霜**  
+> - 技術 文管主責：**翊庭**  
+> - 人事・總務 文管主責：**芮郗**  
 > **適用對象**：全體營運與職能團隊 (管理部、客服部、財務部、技術部、美術部、MIS 等)
 
 ---
