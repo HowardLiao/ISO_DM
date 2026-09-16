@@ -77,8 +77,9 @@
 
 ```text
 ISO_DM/
-├── index.html                  # 互動式 Kick-off 官方戰情網頁 (GitHub Pages 進入點)
-├── governance_kickoff.html     # 互動網頁獨立備份檔
-├── .nojekyll                   # 繞過 GitHub Pages Jekyll 處理
-└── README.md                   # 專案總綱說明文件
+├── index.html                                          # 互動式 Kick-off 官方戰情網頁 (GitHub Pages 進入點)
+├── governance_kickoff.html                             # 互動網頁獨立備份檔
+├── 盛欣_盛碁網絡_營運協同與治理標準化總綱_DMS.xlsx      # 全維度 Excel Master 活頁簿 (8 大受控分頁)
+├── .nojekyll                                           # 繞過 GitHub Pages Jekyll 處理
+└── README.md                                           # 專案總綱說明文件
 ```
