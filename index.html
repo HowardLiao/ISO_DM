@@ -919,9 +919,10 @@
         <ul class="nav-links">
           <li><a href="#principles" class="nav-btn">治理原則</a></li>
           <li><a href="#toolchain" class="nav-btn">五步工具鏈</a></li>
-          <li><a href="#flows" class="nav-btn">核心端到端流程</a></li>
+          <li><a href="#fourtiers" class="nav-btn">四階文件體系</a></li>
+          <li><a href="#flows" class="nav-btn">核心流程</a></li>
           <li><a href="#raci" class="nav-btn">RACI 權責</a></li>
-          <li><a href="#drive" class="nav-btn">Shared Drive 文件庫</a></li>
+          <li><a href="#drive" class="nav-btn">Shared Drive</a></li>
           <li><a href="#timeline" class="nav-btn">90 天時程</a></li>
         </ul>
       </nav>
@@ -1022,6 +1023,7 @@
       <div class="filter-pills">
         <span class="filter-pill active" onclick="filterCategory('all', this)">全部範疇</span>
         <span class="filter-pill" onclick="filterCategory('rule', this)">治理原則</span>
+        <span class="filter-pill" onclick="filterCategory('tier', this)">四階體系</span>
         <span class="filter-pill" onclick="filterCategory('flow', this)">核心流程</span>
         <span class="filter-pill" onclick="filterCategory('tool', this)">協同工具</span>
         <span class="filter-pill" onclick="filterCategory('drive', this)">文件目錄</span>
@@ -1181,12 +1183,216 @@
       </div>
     </section>
 
-    <!-- 3. 五大端到端核心流程與交接標準 -->
+    <!-- 3. 四階文件體系與控制鏈導覽 (Tier 1 to Tier 4) -->
+    <section id="fourtiers" class="searchable-section" data-category="tier" style="margin-bottom: 50px;">
+      <div class="section-title-wrap">
+        <div>
+          <h2 class="section-title">
+            <span>三、四階文件體系與雙向追溯鏈</span>
+            <span class="badge">ISO / ISMS / AI 治理架構</span>
+          </h2>
+          <div class="section-subtitle">
+            由上而下規範治理與做法（Top-Down），由下而上落實舉證與稽核（Bottom-Up）
+          </div>
+        </div>
+        <div style="font-size: 12px; color: var(--accent-cyan);">
+          稽核核心三問：有沒有制度？有沒有照做？能否拿出證據？
+        </div>
+      </div>
+
+      <!-- Tier Selection Tabs -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px;">
+        <div class="flow-btn active" id="btnTier1" onclick="switchTier('t1', this)">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); margin-bottom: 4px;">TIER 1 一階</div>
+          <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px;">政策方針 (Policy)</div>
+          <div style="font-size: 11px; color: var(--text-subtle);">回答：為什麼做、達成什麼？</div>
+        </div>
+        <div class="flow-btn" id="btnTier2" onclick="switchTier('t2', this)">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-amber); margin-bottom: 4px;">TIER 2 二階</div>
+          <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px;">程序書 (Procedure)</div>
+          <div style="font-size: 11px; color: var(--text-subtle);">回答：誰做、何時做、如何運作？</div>
+        </div>
+        <div class="flow-btn" id="btnTier3" onclick="switchTier('t3', this)">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-teal); margin-bottom: 4px;">TIER 3 三階</div>
+          <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px;">作業指導與 SOP</div>
+          <div style="font-size: 11px; color: var(--text-subtle);">回答：第一線實際上怎麼做？</div>
+        </div>
+        <div class="flow-btn" id="btnTier4" onclick="switchTier('t4', this)">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-rose); margin-bottom: 4px;">TIER 4 四階</div>
+          <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px;">表單紀錄 (Evidence)</div>
+          <div style="font-size: 11px; color: var(--text-subtle);">回答：做過了嗎？證據在哪裡？</div>
+        </div>
+      </div>
+
+      <!-- Dynamic Tier Detail Card -->
+      <div class="flow-detail-card" id="tierDetailCard" style="margin-bottom: 24px;">
+        <!-- Injected via switchTier() -->
+      </div>
+
+      <!-- Bidirectional Traceability Architecture Box -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <h3 style="font-size: 17px; color: #fff; display: flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 16 5-5 5 5M7 8l5 5 5-5"/></svg>
+            雙向控制鏈與追溯鏈架構 (Bidirectional Traceability Chain)
+          </h3>
+          <span style="font-size: 12px; color: var(--accent-amber); background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 3px 10px; border-radius: 12px;">
+            四階鐵律：高階優先・一對多關聯・文件與紀錄嚴格區分
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <!-- Left: Top-Down -->
+          <div style="background: #090e1d; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 18px;">
+            <div style="font-size: 14px; font-weight: 700; color: var(--accent-cyan); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>⬇️ 由上而下落實治理 (Governance & Design)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px;">
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-cyan);">
+                <strong style="color: #fff;">一階 Policy (政策方針)</strong>：定目標、原則、高階承諾與合規邊界（不寫操作細節）。
+              </div>
+              <div style="text-align: center; color: var(--accent-cyan); font-size: 10px;">▼ 指導並約束</div>
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-amber);">
+                <strong style="color: #fff;">二階 Procedure (管理辦法)</strong>：定跨部門流程、RACI 邊界、SLA、觸發條件與核准關卡。
+              </div>
+              <div style="text-align: center; color: var(--accent-amber); font-size: 10px;">▼ 拆解為</div>
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-teal);">
+                <strong style="color: #fff;">三階 SOP / Runbook (作業指導)</strong>：定第一線執行步驟、畫面命令、防呆驗證與 Rollback 回滾。
+              </div>
+              <div style="text-align: center; color: var(--accent-teal); font-size: 10px;">▼ 依規產出</div>
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-rose);">
+                <strong style="color: #fff;">四階 Record / Evidence (執行證據)</strong>：空白表單定義規範，填寫後與系統日誌構成不可篡改之稽核證據。
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Bottom-Up -->
+          <div style="background: #090e1d; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 18px;">
+            <div style="font-size: 14px; font-weight: 700; color: var(--accent-teal); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>⬆️ 由下而上舉證稽核 (Audit & Continuous Improvement)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px;">
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-rose);">
+                <strong style="color: #fff;">1. 拿出客觀證據</strong>：調閱 Audit Log、工單核准時間戳、簽收單、會議紀錄與交付物。
+              </div>
+              <div style="text-align: center; color: var(--accent-rose); font-size: 10px;">▲ 驗證是否符合</div>
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-teal);">
+                <strong style="color: #fff;">2. 檢驗作業步驟</strong>：比對現場人員操作是否嚴格遵循所屬 SOP 之防呆檢核點與安全基準。
+              </div>
+              <div style="text-align: center; color: var(--accent-teal); font-size: 10px;">▲ 驗證是否符合</div>
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-amber);">
+                <strong style="color: #fff;">3. 檢驗管理機制</strong>：確認核准關卡、職掌代理與例外通報是否符合程序書之內控要求。
+              </div>
+              <div style="text-align: center; color: var(--accent-amber); font-size: 10px;">▲ 驗證是否達成</div>
+              <div style="background: #131d35; padding: 10px 14px; border-radius: 6px; border-left: 3px solid var(--accent-cyan);">
+                <strong style="color: #fff;">4. 達成組織承諾</strong>：證明公司持續落實資訊安全、合規義務、營運韌性與客戶服務品質。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Studies: Traditional IT vs AI Governance -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; margin-bottom: 24px;">
+        <h3 style="font-size: 17px; color: #fff; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          四階貫通落地實務對照表 (經典範例 vs. 現代 AI 治理)
+        </h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <!-- Case A -->
+          <div style="background: #090e1d; border: 1px solid rgba(226, 232, 240, 0.08); border-radius: 10px; padding: 18px;">
+            <div style="font-size: 14px; font-weight: 700; color: var(--accent-cyan); margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;">
+              案例 A：員工帳號與存取權限控制鏈 (ISMS / ISO 27001)
+            </div>
+            <table style="width: 100%; font-size: 12px;">
+              <tr>
+                <td style="width: 70px; padding: 6px 0; color: var(--accent-cyan); font-weight: 700;">一階政策</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">POL-07 資安政策：帳號依最小權限與職務必要性授予。</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 0; color: var(--accent-amber); font-weight: 700;">二階程序</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">P-12 IT 帳號權限管理程序：申請、審核、開立、每季複核、離職停權流程。</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 0; color: var(--accent-teal); font-weight: 700;">三階 SOP</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">Entra ID / Google Workspace 帳號建立 SOP、特權帳號借用作業指引。</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 0; color: var(--accent-rose); font-weight: 700;">四階證據</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">IT 申請工單、主管簽核紀錄、AD 建立 Log、離職當日停權記錄表。</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Case B -->
+          <div style="background: #090e1d; border: 1px solid rgba(226, 232, 240, 0.08); border-radius: 10px; padding: 18px;">
+            <div style="font-size: 14px; font-weight: 700; color: var(--accent-purple); margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;">
+              案例 B：生成式 AI ＆ Agentic AI 落地治理 (ISO 42001)
+            </div>
+            <table style="width: 100%; font-size: 12px;">
+              <tr>
+                <td style="width: 70px; padding: 6px 0; color: var(--accent-cyan); font-weight: 700;">一階政策</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">POL-11 AI 與 SaaS 政策：資料分類保護、人類監督、禁止機密外洩。</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 0; color: var(--accent-amber); font-weight: 700;">二階程序</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">P-16 AI 與外部 SaaS 風險管理程序、模型/Agent 上線審查與資料存取程序。</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 0; color: var(--accent-teal); font-weight: 700;">三階 SOP</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">RAG 知識庫切片上架 SOP、Agent Tool / MCP Connector 權限設定指引。</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 0; color: var(--accent-rose); font-weight: 700;">四階證據</td>
+                <td style="padding: 6px 0; color: var(--text-primary);">AI 風險評估單、Prompt/Tool 呼叫 Audit Log、人工覆核確認單、例外核准。</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Common Pitfalls Checklist -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px;">
+        <h3 style="font-size: 17px; color: #fff; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          六大常見建置誤區（文管中心防呆檢核）
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+          <div style="background: #090e1d; padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-rose);">
+            <div style="font-size: 13px; font-weight: 700; color: #fb7185; margin-bottom: 4px;">誤區 1：所有 SOP 都叫程序書</div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">流程權責與點擊步驟混雜，導致主管審查負擔過大且每次 UI 微調就要大修程序。</div>
+          </div>
+          <div style="background: #090e1d; padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-rose);">
+            <div style="font-size: 13px; font-weight: 700; color: #fb7185; margin-bottom: 4px;">誤區 2：只有表單沒有控制邏輯</div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">同仁填寫大量申請表，卻看不到風險評估、核准權限與驗收關卡，淪為形式作業。</div>
+          </div>
+          <div style="background: #090e1d; padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-rose);">
+            <div style="font-size: 13px; font-weight: 700; color: #fb7185; margin-bottom: 4px;">誤區 3：只寫制度、不留證據</div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">制度寫得再完美，若稽核時調不出系統日誌、簽核紀錄或驗收憑據，仍屬無效。</div>
+          </div>
+          <div style="background: #090e1d; padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-rose);">
+            <div style="font-size: 13px; font-weight: 700; color: #fb7185; margin-bottom: 4px;">誤區 4：四階表單無上層依據</div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">表單獨立漂流，無法回溯所屬二階程序書，缺乏明確的填寫責任人與保存年限。</div>
+          </div>
+          <div style="background: #090e1d; padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-rose);">
+            <div style="font-size: 13px; font-weight: 700; color: #fb7185; margin-bottom: 4px;">誤區 5：文件過度細碎難維護</div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">為寫而寫建立上百份文件，引用鏈複雜。應抓高風險、高頻率、法規要求者優先。</div>
+          </div>
+          <div style="background: #090e1d; padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-rose);">
+            <div style="font-size: 13px; font-weight: 700; color: #fb7185; margin-bottom: 4px;">誤區 6：版控與真實流程脫鉤</div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">雲端環境、CI/CD 與 AI 工具已更動，但文件仍停留在舊版，失去單一事實來源效力。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 五大端到端核心流程與交接標準 -->
     <section id="flows" class="searchable-section" data-category="flow" style="margin-bottom: 50px;">
       <div class="section-title-wrap">
         <div>
           <h2 class="section-title">
-            <span>三、五大核心端到端流程 (E2E Flows)</span>
+            <span>四、五大核心端到端流程 (E2E Flows)</span>
             <span class="badge">交接標準化</span>
           </h2>
           <div class="section-subtitle">點擊切換查看各核心流程之啟動條件、最低交接標準與交付驗收</div>
@@ -1228,12 +1434,12 @@
       </div>
     </section>
 
-    <!-- 4. RACI 權責邊界矩陣 -->
+    <!-- 5. RACI 權責邊界矩陣 -->
     <section id="raci" class="searchable-section" data-category="rule" style="margin-bottom: 50px;">
       <div class="section-title-wrap">
         <div>
           <h2 class="section-title">
-            <span>四、RACI 跨部門權責邊界矩陣</span>
+            <span>五、RACI 跨部門權責邊界矩陣</span>
             <span class="badge">唯一當責</span>
           </h2>
           <div class="section-subtitle">每項工作僅設一位 A (拍板負責)；技術 vs MIS 責任邊界嚴格切割</div>
@@ -1346,12 +1552,12 @@
       </div>
     </section>
 
-    <!-- 5. Google Shared Drive 互動目錄樹 -->
+    <!-- 6. Google Shared Drive 互動目錄樹 -->
     <section id="drive" class="searchable-section" data-category="drive" style="margin-bottom: 50px;">
       <div class="section-title-wrap">
         <div>
           <h2 class="section-title">
-            <span>五、Google Shared Drive 官方受控目錄架構</span>
+            <span>六、Google Shared Drive 官方受控目錄架構</span>
             <span class="badge">組織資產</span>
           </h2>
           <div class="section-subtitle">盤點 00 至 99 受控資料夾與權限隔離規則，點選左側目錄檢視管理要求</div>
@@ -1399,12 +1605,12 @@
       </div>
     </section>
 
-    <!-- 6. 協同共通受控模板庫 (L4 核心憑證) -->
+    <!-- 7. 協同共通受控模板庫 (L4 核心憑證) -->
     <section class="searchable-section" data-category="rule" style="margin-bottom: 50px;">
       <div class="section-title-wrap">
         <div>
           <h2 class="section-title">
-            <span>六、協同共通受控模板庫 (L4 核心憑證)</span>
+            <span>七、協同共通受控模板庫 (L4 核心憑證)</span>
             <span class="badge">快速套用</span>
           </h2>
           <div class="section-subtitle">點擊一鍵複製標準結構，直接黏貼至 Google Docs / Sheets 快速開工</div>
@@ -1447,12 +1653,12 @@
       </div>
     </section>
 
-    <!-- 7. 第一個 90 天推動時程 (Quick Wins) -->
+    <!-- 8. 第一個 90 天推動時程 (Quick Wins) -->
     <section id="timeline" class="searchable-section" data-category="rule" style="margin-bottom: 60px;">
       <div class="section-title-wrap">
         <div>
           <h2 class="section-title">
-            <span>七、第一個 90 天快贏推動計畫 (Roadmap)</span>
+            <span>八、第一個 90 天快贏推動計畫 (Roadmap)</span>
             <span class="badge">小步快跑</span>
           </h2>
           <div class="section-subtitle">三條高頻流程先跑，在真實工作中檢驗與簡化，逐步建立組織協同慣性</div>
@@ -1526,6 +1732,154 @@
 
   <!-- JavaScript Interaction Logic -->
   <script>
+    // Four Tiers Data
+    const tiers = {
+      t1: {
+        badge: "TIER 1 一階受控文件",
+        title: "政策方針 (Policy / Management Manual)",
+        subtitle: "核心解答：為什麼做 (Why)？組織最高治理方針與原則是什麼？",
+        color: "var(--accent-cyan)",
+        dccOwner: "人事・總務文管主責（芮郗）統一受控編號 ｜ 最高管理層核准",
+        scope: "全公司跨部門通用、數量少 (控制在 10~11 份)、具備高度穩定性",
+        essence: "一階是組織的治理憲法與管理承諾。絕不可寫成操作手冊，重點是確立組織治理方針、業務目標、資安底線與重大法遵要求。",
+        features: [
+          "確立管理制度的目的、適用組織範疇與高階承諾",
+          "定義重大法遵、契約義務與利害關係人要求",
+          "制定可衡量的年度/季度目標原則",
+          "作為二階程序書與三階 SOP 之最高指導母法"
+        ],
+        examples: [
+          "POL-01 公司治理、授權與決策政策",
+          "POL-02 文件、知識與紀錄管理政策",
+          "POL-07 資訊安全、資料保護與可接受使用政策",
+          "POL-11 生成式 AI 與外部 SaaS 使用治理政策"
+        ],
+        auditQ: "稽核首問：公司有沒有經過核准的正式政策宣示？同仁是否知悉並遵守？"
+      },
+      t2: {
+        badge: "TIER 2 二階受控文件",
+        title: "管理辦法與程序書 (Procedure / Framework)",
+        subtitle: "核心解答：誰做、何時做 (Who & When)？跨部門流程與內控如何運作？",
+        color: "var(--accent-amber)",
+        dccOwner: "各流程主責 Owner 起草 ｜ 財務（玉霜）、技術（翊庭）、總務（芮郗）共同覆核",
+        scope: "核心業務跨部門協同、共 17 項核心程序 (P-01 ~ P-17)",
+        essence: "二階把政策轉化為可跨部門落地的制度。最關鍵不是每個按鈕怎麼按，而是建立「流程控制點 (Control Points)」、輸入輸出、交接條件與退件權。",
+        features: [
+          "明確規範 RACI 矩陣：單一 Accountable (A) 與各協同角色",
+          "定義觸發條件、輸入清單、最低交接標準與退件權限",
+          "設定服務承諾時效 (SLA/OLA) 與例外/重大事件升級機制",
+          "定義此流程必須留存之第四階紀錄與保存年限"
+        ],
+        examples: [
+          "P-06 客戶服務、工單、客訴與 SLA 管理程序",
+          "P-07 需求評估、排程、交付與驗收管理程序",
+          "P-09 報價、合約、請款、收款與退款程序",
+          "P-14 系統開發、測試、變更、上線與回復程序"
+        ],
+        auditQ: "稽核次問：流程有沒有設定控制關卡？權責是否清晰？發生例外有沒有升級？"
+      },
+      t3: {
+        badge: "TIER 3 三階受控文件",
+        title: "標準作業程序與作業指導書 (SOP / WI / Runbook)",
+        subtitle: "核心解答：實際上怎麼做 (How)？第一線同仁如何重複產出一致成果？",
+        color: "var(--accent-teal)",
+        dccOwner: "執行部門主管核准 ｜ 技術文管窗口（翊庭）與各部門經辦共同維護",
+        scope: "第一線操作同仁 (研發、MIS、客服、財務、美術、HR)",
+        essence: "三階文件的受眾是現場執行人員。步驟必須足夠具體，包含畫面截圖、配置設定、指令語法、判定條件、失敗處置與 Rollback 回滾步驟。",
+        features: [
+          "明確的前置準備條件與存取權限要求",
+          "圖文並茂的操作步驟、配置命令與防呆檢查表",
+          "異常與故障排查指引 (Troubleshooting) 與復原回滾腳本",
+          "確保受訓合格人員皆能穩定產出 100% 一致之結果"
+        ],
+        examples: [
+          "MIS：Entra ID / Google 帳號建立與離職即時停權 SOP",
+          "技術部：生產環境緊急 Rollback 與 DB 災難復原 Runbook",
+          "美術部：素材規格切圖命名與商用授權歸檔作業指引",
+          "AI 治理：內部 RAG 知識庫切片上架與 Prompt 審查指引"
+        ],
+        auditQ: "稽核三問：第一線操作人員有沒有照著受控 SOP 執行？有無未經核准的偷步操作？"
+      },
+      t4: {
+        badge: "TIER 4 四階受控文件",
+        title: "表單、台帳、紀錄與客觀證據 (Forms & Records)",
+        subtitle: "核心解答：做過了嗎 (Evidence)？如何證明組織真實遵循制度？",
+        color: "var(--accent-rose)",
+        dccOwner: "表單填寫人與審核主管共同簽章 ｜ 存入 Google Shared Drive 04 目錄受控保管",
+        scope: "全體執行過程留下之可稽核歷史軌跡",
+        essence: "前三階告訴人員該怎麼管理與執行；第四階證明組織確實做了！包含空白表單、已簽核表單、系統日誌 (Audit Log)、驗收單、會議紀錄與改善台帳。",
+        features: [
+          "真實填寫之數據與時間戳，不可事後偽造或任意篡改",
+          "具備明確的經辦人、覆核主管與最終拍板者簽章軌跡",
+          "支援雙向追溯：每張表單/Log 必能回溯至上層程序書與政策",
+          "做為管理審查會議 (MBR) 與持續改善 (CAPA) 的量化數據來源"
+        ],
+        examples: [
+          "跨部門任務卡、需求評估單、驗收交接單",
+          "全公司 Decision Log (決策台帳)、會議紀錄表",
+          "生產環境變更申請單、UAT 測試紀錄、Git Tag Log",
+          "CAPA 改善台帳、AI Tool 呼叫 Log、存取權限盤點報告"
+        ],
+        auditQ: "稽核終問：能不能拿出無可爭議的客觀證據？各項紀錄是否完整閉環留存？"
+      }
+    };
+
+    function switchTier(tierKey, btn) {
+      document.querySelectorAll('#fourtiers .flow-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const data = tiers[tierKey];
+      const html = `
+        <div class="flow-detail-header">
+          <div>
+            <div style="font-size: 12px; color: ${data.color}; font-weight: 700; margin-bottom: 4px;">${data.badge}</div>
+            <h3>${data.title}</h3>
+          </div>
+          <div class="flow-route" style="color: ${data.color}; background: rgba(255,255,255,0.05); border: 1px solid ${data.color};">
+            ${data.subtitle}
+          </div>
+        </div>
+        <div style="margin-bottom: 16px; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+          <strong>🎯 管理定位與精神：</strong> <span style="color: #fff;">${data.essence}</span><br>
+          <strong>👥 文管維護與核准權責：</strong> <span style="color: var(--accent-amber);">${data.dccOwner}</span> ｜ 
+          <strong>🏢 適用範疇：</strong> ${data.scope}
+        </div>
+        <div class="flow-columns">
+          <div class="flow-col-box">
+            <div class="flow-col-title" style="color: ${data.color};">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              編制核心要領與控制要求
+            </div>
+            <ul class="flow-list">
+              ${data.features.map(f => `<li>${f}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="flow-col-box">
+            <div class="flow-col-title" style="color: var(--accent-cyan);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              盛欣・盛碁 典型代表文件
+            </div>
+            <ul class="flow-list">
+              ${data.examples.map(e => `<li>${e}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="flow-col-box">
+            <div class="flow-col-title" style="color: var(--accent-teal);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              內稽內控檢核視角
+            </div>
+            <div style="font-size: 13px; color: var(--text-primary); line-height: 1.6; margin-bottom: 12px; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 6px;">
+              ${data.auditQ}
+            </div>
+            <div style="font-size: 12px; color: var(--text-subtle);">
+              💡 避坑提示：低階文件不得與高階文件牴觸；若有爭端以高階文件為準；每份四階表單均須有對應上層程序依據。
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('tierDetailCard').innerHTML = html;
+    }
+
     // Flow Data
     const flows = {
       f01: {
@@ -1699,8 +2053,9 @@
       document.getElementById('flowDetailCard').innerHTML = html;
     }
 
-    // Initialize first flow
-    switchFlow('f01', document.querySelector('.flow-btn'));
+    // Initialize first tier and flow
+    switchTier('t1', document.getElementById('btnTier1'));
+    switchFlow('f01', document.querySelector('.flow-grid .flow-btn'));
 
     // Drive Explorer Data
     const folders = {
