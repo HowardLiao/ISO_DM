@@ -3,7 +3,7 @@
 ### Repository: `ISO_DM` (ISO Document Management)
 
 > **線上互動式 Kick-off 戰情首頁**：[https://howardliao.github.io/ISO_DM/](https://howardliao.github.io/ISO_DM/)  
-> **文檔中心內部受控系統位址**：[http://10.0.0.24:8091](http://10.0.0.24:8091)  
+> **文檔中心內部受控系統位址**：[http://10.0.0.247:8091](http://10.0.0.247:8091)  
 > **架構規劃**：Howard Liao Ph.D.  
 > **文管中心 (DCC) 負責人**：  
 > - 財務 文管主責：**玉霜**  
